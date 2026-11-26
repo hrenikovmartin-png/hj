@@ -54,6 +54,30 @@ main{background:var(--paper);color:var(--wine);position:relative}
 .reasons{max-width:1240px;margin:auto;padding:115px 7vw 130px}.reasons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e8d9d2;border:1px solid #e8d9d2;margin-top:45px}.reason{background:var(--paper);padding:34px 28px;min-height:215px;cursor:pointer;text-align:left;border:0;color:var(--wine);transition:background .25s}.reason:hover{background:#f5e8e2}.reason .num{font-size:.72rem;color:#bd7e84;letter-spacing:.15em}.reason h3{font:500 1.55rem 'Playfair Display',serif;margin:25px 0 10px}.reason p{font-size:.9rem;color:#927b79;line-height:1.7;margin:0}
 .letter{padding:120px 7vw;background:#f1e3dc}.letter-inner{max-width:850px;margin:auto}.letter .section-title{max-width:680px}.letter-body{font:500 clamp(1.15rem,2vw,1.45rem)/2 'Playfair Display',serif;color:#70575a;max-width:760px}.letter-body p{margin:0 0 20px}.letter-sign{font:italic 1.35rem 'Playfair Display',serif;color:#b56f7b;margin-top:35px}
 .secret{padding:105px 7vw;text-align:center;background:var(--paper)}.secret-box{max-width:700px;margin:auto;border:1px solid #e8d9d2;padding:55px 30px}.secret-icon{font-size:2rem;color:#bd7e84}.secret-text{display:none;font:500 1.5rem/1.8 'Playfair Display',serif;color:#795b60;margin:28px auto 0;max-width:560px}.secret-text.open{display:block;animation:fade .7s both}
+
+/* Открывающееся послание */
+.message-overlay{position:fixed;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;padding:22px;background:rgba(20,9,15,.78);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.message-overlay.open{opacity:1;visibility:visible}
+.message-dialog{position:relative;width:min(520px,100%);text-align:center;color:var(--wine);padding:42px 30px 34px;background:var(--paper);border:1px solid #e9c9c7;box-shadow:0 30px 100px #0008;transform:translateY(24px) scale(.96);transition:transform .45s cubic-bezier(.2,.8,.2,1);overflow:hidden}
+.message-overlay.open .message-dialog{transform:translateY(0) scale(1)}
+.message-close{position:absolute;right:13px;top:10px;border:0;background:transparent;color:#9b7379;font-size:1.8rem;cursor:pointer;width:40px;height:40px}
+.envelope-stage{height:142px;display:grid;place-items:center;position:relative;margin:0 auto 12px}
+.envelope{position:relative;width:118px;height:78px;background:#d98e9c;border-radius:4px;box-shadow:0 12px 24px #7b354322;animation:envelopeArrive .6s both}
+.envelope:before{content:"";position:absolute;inset:0;background:#edb5bd;clip-path:polygon(0 0,50% 58%,100% 0);transform-origin:top;animation:flapOpen .8s .35s cubic-bezier(.2,.7,.2,1) both;z-index:2}
+.envelope:after{content:"♡";position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-42%);font-size:2rem;color:#fff8f2}
+.letter-sheet{position:absolute;z-index:1;left:50%;top:50%;width:90px;height:62px;background:#fffaf4;border-radius:3px;transform:translate(-50%,-18%);animation:letterRise .8s .55s cubic-bezier(.2,.8,.2,1) both}
+.heart-particle{position:absolute;color:#d77f91;font-size:20px;opacity:0;animation:heartFloat 2.2s ease-out infinite}
+.heart-particle.h1{left:18%;top:38%;animation-delay:.55s}.heart-particle.h2{right:17%;top:24%;font-size:15px;animation-delay:.9s}.heart-particle.h3{right:25%;bottom:7%;font-size:24px;animation-delay:1.2s}
+.message-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#b56f7b;font-weight:700;margin:15px 0}
+.message-content{font:500 clamp(1.35rem,4vw,1.8rem)/1.65 'Playfair Display',serif;color:#70575a;margin:0 auto;max-width:420px;animation:messageAppear .65s .7s both}
+.message-sign{font:italic 1rem 'Playfair Display',serif;color:#b56f7b;margin-top:22px}
+@keyframes envelopeArrive{from{opacity:0;transform:translateY(20px) scale(.8)}to{opacity:1;transform:none}}
+@keyframes flapOpen{0%{clip-path:polygon(0 0,50% 58%,100% 0)}100%{clip-path:polygon(0 0,50% -45%,100% 0)}}
+@keyframes letterRise{0%{transform:translate(-50%,-18%)}100%{transform:translate(-50%,-72%)}}
+@keyframes heartFloat{0%{opacity:0;transform:translateY(14px) scale(.6) rotate(-12deg)}25%{opacity:1}100%{opacity:0;transform:translateY(-48px) scale(1.15) rotate(12deg)}}
+@keyframes messageAppear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.message-overlay,.message-dialog{transition:none}.envelope,.envelope:before,.letter-sheet,.heart-particle,.message-content{animation:none!important}.message-overlay.open .message-dialog{transform:none}}
+
 footer{background:var(--wine);color:#c9aeb0;text-align:center;padding:36px 20px;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}footer span{color:var(--rose)}
 .toast{position:fixed;z-index:9;bottom:25px;left:50%;transform:translate(-50%,20px);opacity:0;transition:.3s;background:#fff8f2;color:#3a202b;padding:15px 23px;border-radius:99px;box-shadow:0 12px 40px #0003;max-width:calc(100% - 30px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}.reveal.visible{opacity:1;transform:none}
@@ -90,12 +114,40 @@ footer{background:var(--wine);color:#c9aeb0;text-align:center;padding:36px 20px;
 </div></section>
 <section class="letter reveal" id="letter"><span class="side-photo left p5" role="img" aria-label="Семейная фотография"></span><span class="side-photo right p6" role="img" aria-label="Семейная фотография"></span><div class="letter-inner"><div class="kicker">письмо, которое хочется сохранить</div><h2 class="section-title">Мам, это всё<br>для тебя.</h2><div class="letter-body"><p>Я не всегда говорю об этом вслух, но я очень ценю всё, что ты для меня делаешь. Спасибо за твоё терпение, за бессонные переживания, за поддержку и за то, что ты рядом не только в хорошие дни.</p><p>Я хочу, чтобы ты чаще отдыхала, чаще выбирала себя, исполняла свои желания и никогда не забывала, насколько ты замечательная. Пусть в твоей жизни будет больше лёгкости, приятных неожиданностей, путешествий, смеха и спокойных счастливых вечеров.</p><p>И знай: сколько бы мне ни было лет, мне всегда будет важно, чтобы ты улыбалась. Ты заслуживаешь всего самого доброго на свете.</p></div><div class="letter-sign">С бесконечной любовью — твой ребёнок. ♡</div></div></section>
 <section class="secret reveal"><div class="secret-box"><div class="secret-icon">✉</div><div class="kicker">последнее, но самое важное</div><h2 class="section-title">Открой, когда захочешь улыбнуться.</h2><button class="btn primary" id="secretBtn">Открыть моё послание <span>♡</span></button><p class="secret-text" id="secretText">Мамочка, ты не обязана быть сильной каждую секунду. Пусть сегодня о тебе позаботятся так же нежно, как ты заботилась обо мне. Я рядом. Я горжусь тобой. И я люблю тебя больше, чем помещается на этой странице. ❤️</p></div></section>
-</main><footer>сделано с <span>любовью</span> · для самой лучшей мамы</footer><div class="toast" id="toast" role="status" aria-live="polite"></div>
+</main><footer>сделано с <span>любовью</span> · для самой лучшей мамы</footer><div class="message-overlay" id="messageOverlay" aria-hidden="true">
+<div class="message-dialog" role="dialog" aria-modal="true" aria-labelledby="messageLabel">
+<button class="message-close" id="messageClose" aria-label="Закрыть послание">×</button>
+<div class="envelope-stage" aria-hidden="true"><span class="heart-particle h1">♥</span><span class="heart-particle h2">♡</span><span class="heart-particle h3">♥</span><div class="letter-sheet"></div><div class="envelope"></div></div>
+<div class="message-label" id="messageLabel">маленькое послание для тебя</div>
+<p class="message-content" id="messageContent"></p><div class="message-sign">с любовью, всегда ♡</div>
+</div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
-(()=>{const toast=document.getElementById('toast');let timer;function show(t){toast.textContent=t;toast.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>toast.classList.remove('show'),3000)}
-document.querySelectorAll('[data-msg]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.msg)));
-
-document.getElementById('secretBtn').addEventListener('click',()=>{const p=document.getElementById('secretText');p.classList.toggle('open');document.getElementById('secretBtn').innerHTML=p.classList.contains('open')?'Спрятать послание <span>↗</span>':'Открыть моё послание <span>♡</span>';if(p.classList.contains('open'))show('Это послание — крепкое объятие для тебя ❤️')});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+(()=>{
+const overlay=document.getElementById('messageOverlay');
+const content=document.getElementById('messageContent');
+const close=document.getElementById('messageClose');
+let lastFocus=null;
+function openMessage(message){
+lastFocus=document.activeElement;
+content.textContent=message;
+overlay.classList.remove('open');
+overlay.setAttribute('aria-hidden','false');
+void overlay.offsetWidth;
+overlay.classList.add('open');
+close.focus();
+}
+function closeMessage(){
+overlay.classList.remove('open');
+overlay.setAttribute('aria-hidden','true');
+if(lastFocus&&lastFocus.focus)lastFocus.focus();
+}
+document.querySelectorAll('[data-msg]').forEach(button=>button.addEventListener('click',()=>openMessage(button.dataset.msg)));
+close.addEventListener('click',closeMessage);
+overlay.addEventListener('click',event=>{if(event.target===overlay)closeMessage()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&overlay.classList.contains('open'))closeMessage()});
+document.getElementById('secretBtn').addEventListener('click',()=>openMessage('Мамочка, ты не обязана быть сильной каждую секунду. Пусть сегодня о тебе позаботятся так же нежно, как ты заботилась обо мне. Я рядом. Я горжусь тобой. И я люблю тебя больше, чем помещается на этой странице. ❤️'));
+const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');io.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(element=>io.observe(element));
 })();
 </script></body></html>
