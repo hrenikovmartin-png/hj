@@ -1,166 +1,82 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fff4f0">
-<meta name="description" content="Тёплое интерактивное поздравление с Днём матери.">
-<title>Мамочке — с любовью ♡</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#24151b"><meta name="description" content="Особенное поздравление с Днём матери — с любовью, нежностью и благодарностью.">
+<title>Мамочка — ты моё сердце</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#493b3b;--muted:#887675;--rose:#c76e78;--rose-dark:#a94f61;--cream:#fff9f3;--peach:#f8e6dc;--line:#eedbd2;--shadow:0 24px 70px #8f55521c}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% 8%,#fff 0,transparent 34%),radial-gradient(ellipse at 90% 25%,#f9e2df 0,transparent 32%),linear-gradient(145deg,#fff8f0,#f7e9e2 55%,#f9efeb);color:var(--ink);font-family:"DM Sans",sans-serif;min-height:100vh;overflow-x:hidden}
-button{font:inherit}.ambient{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.orb{position:absolute;border-radius:50%;filter:blur(2px);opacity:.35;animation:drift 18s ease-in-out infinite alternate}.orb.one{width:260px;height:260px;background:#f2c4c5;top:8%;left:-100px}.orb.two{width:190px;height:190px;background:#f4d9a9;right:-70px;top:48%;animation-delay:-7s}.orb.three{width:140px;height:140px;background:#e9c8d1;left:18%;bottom:-60px;animation-delay:-11s}
-main{position:relative;z-index:1;width:min(1080px,calc(100% - 32px));margin:auto;padding:28px 0 70px}
-.topline{display:flex;justify-content:space-between;align-items:center;color:#9b7f7a;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}.topline span:last-child{letter-spacing:.05em}
-.hero{min-height:600px;display:grid;place-items:center;text-align:center;position:relative;padding:65px 20px 48px}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border:1px solid #edd5ce;border-radius:99px;background:#fff9f4b8;color:#a96e70;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}.eyebrow:before,.eyebrow:after{content:"✦";font-size:.7rem;color:#d59a8f}
-h1,h2,h3,p{margin-top:0}h1{font:600 clamp(3.2rem,9vw,7.3rem)/.99 "Playfair Display",serif;letter-spacing:-.055em;margin:27px 0 18px;color:#573f40}h1 em{font-weight:500;color:var(--rose);display:block}.hero-copy{max-width:570px;margin:0 auto;color:#806d6b;font-size:clamp(1rem,2vw,1.15rem);line-height:1.85}.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{border:0;border-radius:99px;padding:14px 22px;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;display:inline-flex;align-items:center;gap:9px;font-weight:700}.btn:hover{transform:translateY(-3px)}.btn-primary{background:var(--rose);color:white;box-shadow:0 12px 24px #c76e7833}.btn-primary:hover{background:var(--rose-dark);box-shadow:0 15px 30px #c76e7845}.btn-soft{background:#fff9f3;color:#94676a;border:1px solid var(--line)}
-.hero-flower{font-size:clamp(3rem,8vw,5rem);margin-top:34px;filter:drop-shadow(0 12px 10px #a9686920);animation:sway 5s ease-in-out infinite;display:inline-block}
-.scroll-note{font-size:.76rem;color:#a98d87;letter-spacing:.12em;text-transform:uppercase;margin-top:28px}
-.section{margin:28px 0;padding:clamp(25px,5vw,54px);border:1px solid #fff;background:#fffaf5d9;border-radius:30px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}.section-head{text-align:center;margin-bottom:30px}.kicker{color:#bd7c7b;text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:700}.section h2{font:600 clamp(2rem,5vw,3.2rem)/1.12 "Playfair Display",serif;margin:10px 0;color:#594243}.section-head p{color:var(--muted);line-height:1.7;margin:0 auto;max-width:560px}
-.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.reason{min-height:185px;padding:23px 20px;border-radius:22px;background:linear-gradient(145deg,#fff,#fff5f0);border:1px solid #f0dfd8;cursor:pointer;text-align:left;transition:transform .25s,box-shadow .25s,border-color .25s;color:var(--ink)}.reason:hover,.reason:focus-visible{transform:translateY(-5px);box-shadow:0 16px 30px #9b66631a;border-color:#e5b8b5;outline:none}.reason .symbol{font-size:1.8rem;display:block;margin-bottom:15px}.reason strong{display:block;font:600 1.15rem "Playfair Display",serif;margin-bottom:8px}.reason small{color:#907b78;line-height:1.55;font-size:.87rem}
-.letter{max-width:730px;margin:auto;text-align:center}.letter p{font:500 clamp(1.1rem,2.5vw,1.45rem)/1.9 "Playfair Display",serif;color:#6a5352}.letter .sign{font:italic 1rem "DM Sans",sans-serif;color:#b16e75;margin-top:22px}
-.bouquet-wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.bouquet-art{min-height:270px;display:grid;place-items:center;border-radius:25px;background:radial-gradient(circle at 50% 40%,#fff 0,#fcece7 62%,#f7e2dc 100%);position:relative;overflow:hidden}.bouquet-art:before,.bouquet-art:after{content:"";position:absolute;width:170px;height:170px;border:1px solid #fff9;border-radius:50%}.bouquet-art:after{width:230px;height:230px}.bouquet-emoji{font-size:clamp(5rem,12vw,8rem);z-index:1;filter:drop-shadow(0 12px 12px #95585a26);transition:transform .4s}.bouquet-emoji.pop{transform:scale(1.2) rotate(8deg)}.bouquet-controls h3{font:600 1.8rem "Playfair Display",serif;margin-bottom:10px}.bouquet-controls p{color:var(--muted);line-height:1.7}.bouquet-buttons{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:10px 14px;cursor:pointer;color:#8b6667}.chip[aria-pressed=true]{background:#f6e2df;border-color:#d9a6a3;color:#92545b}
-.memory{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}.memory-card{padding:28px;border-radius:24px;background:#f9eee8;border:1px solid #efddd5}.memory-card blockquote{font:500 1.35rem/1.65 "Playfair Display",serif;margin:0;color:#6c5050}.memory-card cite{display:block;margin-top:17px;color:#a87a77;font-style:normal;font-size:.85rem}.memory-side p{color:var(--muted);line-height:1.8}.memory-side .btn{margin-top:6px}
-.secret{text-align:center;background:linear-gradient(135deg,#f8e8e4,#fff8f1)}.secret-lock{font-size:2rem}.secret-message{display:none;max-width:620px;margin:22px auto 0;font:500 1.4rem/1.7 "Playfair Display",serif;color:#8c555e}.secret-message.open{display:block;animation:rise .6s both}
-.footer{text-align:center;padding:38px 10px 10px;color:#a48983;font-size:.82rem}.footer .heart{color:#c76e78}
-.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#5b4546;color:white;padding:13px 20px;border-radius:99px;box-shadow:0 12px 35px #543b3b30;z-index:10;transition:.3s;max-width:calc(100% - 30px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
-#petals{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
-@keyframes drift{to{transform:translate(45px,-35px) scale(1.12)}}@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}
-@media(max-width:720px){.hero{min-height:540px;padding-top:55px}.reasons{grid-template-columns:1fr 1fr}.bouquet-wrap,.memory{grid-template-columns:1fr}.bouquet-art{min-height:220px}.topline{font-size:.65rem}}
-@media(max-width:460px){main{width:min(100% - 20px,1080px);padding-top:18px}.hero{padding-inline:8px}.reasons{grid-template-columns:1fr}.reason{min-height:auto}.section{border-radius:23px;padding:25px 19px}.topline span:last-child{display:none}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
-
-/* Visual refresh: bespoke rose palette, editorial hero and responsive navigation */
-:root{--ink:#fff1ee;--muted:#d2b4b1;--rose:#ff8fb5;--rose-dark:#ff6f9e;--cream:#2b151b;--peach:#49232e;--line:#75404e;--shadow:0 24px 70px #08030866}
-html{scroll-padding-top:90px}
-body{background:radial-gradient(ellipse at 76% 12%,#783344 0,transparent 36%),radial-gradient(ellipse at 10% 80%,#4c1e2b 0,transparent 36%),linear-gradient(145deg,#180e14,#29131d 52%,#170d13);color:var(--ink)}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.16;background-image:radial-gradient(#ffd9e3 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
-main{width:min(1240px,calc(100% - 48px));padding-top:16px}
-.topline{display:none}
-.site-nav{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:13px 18px;border:1px solid #ffffff22;border-radius:999px;background:#24151bbd;backdrop-filter:blur(18px);box-shadow:0 10px 35px #08030833}
-.brand{font:italic 1.15rem "Playfair Display",serif;color:#ffe3e9;text-decoration:none;white-space:nowrap}.brand span{font:2rem sans-serif;color:#ff8fb5;vertical-align:-3px;margin-right:5px}
-.nav-links{display:flex;gap:clamp(12px,2.4vw,30px);align-items:center}.nav-links a{font-size:.88rem;color:#f4dce1;text-decoration:none;transition:color .2s}.nav-links a:hover{color:#ff8fb5}.nav-heart{font-size:1.8rem;color:#ff8fb5}
-.hero{min-height:590px;display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:12px;text-align:left;padding:35px 12px 50px;overflow:hidden}
-.hero-copy-wrap{position:relative;z-index:1;padding:28px 0 25px 18px}
-.eyebrow{background:#ffffff0d;border-color:#ffb5c822;color:#ffc0d0}
-.eyebrow:before,.eyebrow:after{color:#ff9fbd}
-h1{font-size:clamp(3.7rem,7.2vw,7rem);color:#fff0ed;line-height:.98;margin:28px 0 23px}
-h1 em{color:#ff91b6}
-.hero-copy{max-width:510px;color:#e6c8c8;font-size:clamp(1.05rem,1.7vw,1.22rem);line-height:1.8;margin:0}
-.hero-actions{justify-content:flex-start;margin-top:30px}
-.btn-primary{background:linear-gradient(110deg,#ff8fb5,#f66c9e);color:#371923;box-shadow:0 12px 35px #f76c9e40}
-.btn-primary:hover{background:#ffabc7;box-shadow:0 15px 40px #f76c9e55}
-.btn-soft{background:#ffffff0c;color:#ffe2e9;border-color:#ffffff28}
-.scroll-note{color:#c99ca8;text-align:left;margin-top:26px}
-.hero-art{position:relative;display:grid;place-items:center;min-width:0}
-.hero-art:before{content:"";position:absolute;width:75%;aspect-ratio:1;border-radius:50%;background:#f879a51c;filter:blur(50px)}
-.hero-art img{position:relative;width:min(100%,650px);height:auto;filter:drop-shadow(0 35px 55px #08030880);animation:bouquetFloat 7s ease-in-out infinite}
-.section{background:linear-gradient(145deg,#321b25eF,#25141deF);border:1px solid #ffffff1c;box-shadow:0 24px 70px #08030855}
-.section h2{color:#fff0ed}
-.section-head p,.reason small,.bouquet-controls p,.memory-side p{color:#d1b2b4}
-.kicker{color:#ff9bb9}
-.reason{background:linear-gradient(145deg,#482632,#321b25);border-color:#ffffff1c;color:#fff0ed}
-.reason:hover,.reason:focus-visible{box-shadow:0 18px 36px #09030a55;border-color:#e98ca9}
-.reason small{color:#d6b8ba}
-.letter p{color:#f0d7d7}
-.letter .sign{color:#ff9bb9}
-.bouquet-art{background:radial-gradient(circle at 50% 40%,#754052 0,#482735 62%,#321b25 100%)}
-.bouquet-art:before,.bouquet-art:after{border-color:#ffffff14}
-.chip{background:#3b202b;border-color:#75404e;color:#f4d8df}
-.chip[aria-pressed=true]{background:#7d3a53;border-color:#ff9fbd;color:#fff}
-.memory-card{background:#472833;border-color:#ffffff1a}
-.memory-card blockquote{color:#ffe9e8}
-.memory-card cite{color:#ffadbf}
-.secret{background:linear-gradient(135deg,#4a2633,#321a27)}
-.secret-message{color:#ffc0d0}
-.footer{color:#c59da5}
-.toast{background:#ffe5ec;color:#4b1e2d}
-@keyframes bouquetFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-13px) rotate(1deg)}}
-@media(max-width:850px){.site-nav{border-radius:22px}.nav-links{gap:12px}.nav-links a{font-size:.78rem}.hero{grid-template-columns:1fr 1fr;min-height:520px}.hero-copy-wrap{padding-left:0}}
-@media(max-width:650px){main{width:min(100% - 24px,1240px)}.site-nav{align-items:flex-start;flex-wrap:wrap;padding:12px 15px}.nav-links{order:3;width:100%;overflow-x:auto;padding:4px 0 2px;justify-content:space-between}.nav-links a{white-space:nowrap}.nav-heart{margin-left:auto}.hero{grid-template-columns:1fr;gap:0;text-align:center;padding:48px 4px 28px;min-height:auto}.hero-copy-wrap{padding:0}.hero-copy{margin:auto}.hero-actions{justify-content:center}.scroll-note{text-align:center}.hero-art{max-height:350px;overflow:hidden}.hero-art img{width:min(100%,430px);margin-top:-5px;margin-bottom:-30px}h1{font-size:clamp(3.2rem,13vw,5.4rem)}}
-@media(prefers-reduced-motion:reduce){.hero-art img{animation:none}}
-\n</style>
-</head>
-<body>
-<div class="ambient" aria-hidden="true"><i class="orb one"></i><i class="orb two"></i><i class="orb three"></i></div>
-<canvas id="petals" aria-hidden="true"></canvas>
-<main>
-<div class="topline"><span>маленькое признание в любви</span><span>сделано с теплом · ♡</span></div>
-<nav class="site-nav" aria-label="Главная навигация">
-<a class="brand" href="#home"><span>♡</span> Для моей мамы</a>
-<div class="nav-links"><a href="#letter">Письмо</a><a href="#reasons">Причины</a><a href="#bouquet-section">Букет</a><a href="#memories">Воспоминания</a><a href="#secret-section">Секрет</a></div>
-<span class="nav-heart" aria-hidden="true">♡</span>
-</nav>
-<header class="hero" id="home">
-<div class="hero-copy-wrap">
-<div class="eyebrow">самому дорогому человеку</div>
-<h1>Мамочка,<em>с Днём матери!</em></h1>
-<p class="hero-copy">Спасибо тебе за твою бесконечную любовь, заботу, поддержку и веру в меня. Ты — моё самое большое счастье.</p>
-<div class="hero-actions"><button class="btn btn-primary" id="openLetter">♡ Открыть поздравление ↓</button><button class="btn btn-soft" id="makeMagic">Немного волшебства ✨</button></div>
-<div class="scroll-note">листай ниже — там ещё кое-что</div>
-</div>
-<div class="hero-art"><img src="assets/rose-bouquet.svg" alt="Нежный букет роз в розовой обёртке для мамы" fetchpriority="high"></div>
+:root{--wine:#24151b;--wine2:#3a202b;--rose:#e9a0ad;--blush:#f6dfe1;--paper:#fff8f2;--muted:#a9908d;--gold:#d6b58b}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--wine);color:var(--paper);font-family:'DM Sans',sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}
+.noise{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E")}
+header{min-height:100svh;position:relative;display:flex;align-items:center;isolation:isolate;overflow:hidden;background:#24151b}
+.hero-photo{position:absolute;inset:0;z-index:-2;background-image:linear-gradient(90deg,rgba(28,14,20,.94) 0%,rgba(28,14,20,.74) 40%,rgba(28,14,20,.08) 100%),url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=2200&q=88');background-size:cover;background-position:center 45%;transform:scale(1.025);animation:slowZoom 18s ease-in-out infinite alternate}
+.hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,var(--wine) 0%,transparent 26%,transparent 78%,#1b1019aa 100%)}
+.nav{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:25px clamp(22px,6vw,90px);z-index:3}
+.logo{font:italic 1.35rem 'Playfair Display',serif;letter-spacing:.02em}.logo span{color:var(--rose);font-size:1.7rem;margin-right:8px}
+.navlinks{display:flex;gap:30px;color:#f7e8e5a8;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}.navlinks a:hover{color:white}
+.hero-content{width:min(1280px,100%);margin:auto;padding:130px clamp(24px,8vw,130px) 130px}
+.eyebrow{display:flex;align-items:center;gap:14px;color:var(--rose);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase}.eyebrow:before{content:"";width:42px;height:1px;background:var(--rose)}
+h1{font:500 clamp(4rem,9.5vw,9.3rem)/.92 'Playfair Display',serif;letter-spacing:-.055em;max-width:780px;margin:30px 0 25px}h1 em{display:block;color:var(--rose);font-weight:500}
+.lead{max-width:470px;color:#f5e2dfb8;font-size:1.08rem;line-height:1.9}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:34px}.btn{border:1px solid #ffffff30;border-radius:99px;padding:15px 23px;background:#ffffff0c;color:white;cursor:pointer;transition:.25s;display:inline-flex;align-items:center;gap:12px}.btn.primary{background:var(--rose);border-color:var(--rose);color:#351d27;font-weight:700}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px #0005}.hero-caption{position:absolute;right:clamp(20px,6vw,90px);bottom:68px;writing-mode:vertical-rl;color:#f7e8e588;font-size:.67rem;letter-spacing:.24em;text-transform:uppercase}
+.scroll{position:absolute;bottom:34px;left:clamp(24px,8vw,130px);display:flex;align-items:center;gap:13px;color:#f5d9dc88;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}.scroll:before{content:"";height:1px;width:42px;background:var(--rose)}
+main{background:var(--paper);color:var(--wine);position:relative}
+.intro{max-width:1240px;margin:auto;padding:130px 7vw 120px;display:grid;grid-template-columns:.7fr 1.3fr;gap:9vw;align-items:start}
+.kicker{color:#b56f7b;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem;font-weight:700}
+.intro h2,.section-title{font:500 clamp(2.8rem,5.5vw,5.5rem)/1.04 'Playfair Display',serif;letter-spacing:-.04em;margin:18px 0}
+.intro-copy{font:500 clamp(1.25rem,2vw,1.75rem)/1.75 'Playfair Display',serif;color:#70575a;max-width:700px}.intro-copy em{color:#b56f7b}
+.signature{margin-top:32px;font:italic 1.1rem 'Playfair Display',serif;color:#b56f7b}
+.divider{height:1px;background:#eadbd5;max-width:1240px;margin:auto}
+.gallery{max-width:1240px;margin:auto;padding:110px 7vw 125px}
+.gallery-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:45px}.gallery-head p{max-width:330px;color:#927c7b;line-height:1.8;margin:0 0 8px}
+.tiles{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:16px;align-items:stretch}
+.tile{min-height:370px;position:relative;overflow:hidden;background:#4a2935}.tile:first-child{min-height:530px;grid-row:span 2}.tile img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .8s}.tile:hover img{transform:scale(1.055)}.tile:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#24151bbd,transparent 55%)}.tile span{position:absolute;z-index:1;bottom:24px;left:24px;color:white;font:italic 1.45rem 'Playfair Display',serif}
+.note{background:var(--wine);color:var(--paper);padding:115px 7vw;text-align:center;position:relative;overflow:hidden}.note:before,.note:after{content:"✳";position:absolute;color:#e9a0ad18;font-size:19rem;line-height:1}.note:before{left:-60px;top:-95px}.note:after{right:-55px;bottom:-125px}.note .kicker{color:var(--rose)}.note blockquote{position:relative;max-width:900px;margin:25px auto 30px;font:500 clamp(2.1rem,5vw,4.8rem)/1.22 'Playfair Display',serif;letter-spacing:-.025em}.note blockquote em{color:var(--rose)}.note p{color:#e9d3d1a8}
+.reasons{max-width:1240px;margin:auto;padding:115px 7vw 130px}.reasons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e8d9d2;border:1px solid #e8d9d2;margin-top:45px}.reason{background:var(--paper);padding:34px 28px;min-height:215px;cursor:pointer;text-align:left;border:0;color:var(--wine);transition:background .25s}.reason:hover{background:#f5e8e2}.reason .num{font-size:.72rem;color:#bd7e84;letter-spacing:.15em}.reason h3{font:500 1.55rem 'Playfair Display',serif;margin:25px 0 10px}.reason p{font-size:.9rem;color:#927b79;line-height:1.7;margin:0}
+.letter{padding:120px 7vw;background:#f1e3dc}.letter-inner{max-width:850px;margin:auto}.letter .section-title{max-width:680px}.letter-body{font:500 clamp(1.15rem,2vw,1.45rem)/2 'Playfair Display',serif;color:#70575a;max-width:760px}.letter-body p{margin:0 0 20px}.letter-sign{font:italic 1.35rem 'Playfair Display',serif;color:#b56f7b;margin-top:35px}
+.secret{padding:105px 7vw;text-align:center;background:var(--paper)}.secret-box{max-width:700px;margin:auto;border:1px solid #e8d9d2;padding:55px 30px}.secret-icon{font-size:2rem;color:#bd7e84}.secret-text{display:none;font:500 1.5rem/1.8 'Playfair Display',serif;color:#795b60;margin:28px auto 0;max-width:560px}.secret-text.open{display:block;animation:fade .7s both}
+footer{background:var(--wine);color:#c9aeb0;text-align:center;padding:36px 20px;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}footer span{color:var(--rose)}
+.toast{position:fixed;z-index:9;bottom:25px;left:50%;transform:translate(-50%,20px);opacity:0;transition:.3s;background:#fff8f2;color:#3a202b;padding:15px 23px;border-radius:99px;box-shadow:0 12px 40px #0003;max-width:calc(100% - 30px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}.reveal.visible{opacity:1;transform:none}
+@keyframes slowZoom{to{transform:scale(1.09)}}@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(max-width:760px){.nav{padding:20px 22px}.navlinks{gap:14px;font-size:.65rem}.navlinks a:nth-child(n+3){display:none}.hero-content{padding:145px 25px 130px}.hero-photo{background-position:58% center;background-image:linear-gradient(90deg,rgba(28,14,20,.88),rgba(28,14,20,.45)),url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=85')}.hero-caption{display:none}.intro{grid-template-columns:1fr;gap:25px;padding:85px 26px}.gallery{padding:85px 22px}.gallery-head{display:block}.tiles{grid-template-columns:1fr 1fr;gap:10px}.tile{min-height:240px}.tile:first-child{grid-column:span 2;grid-row:auto;min-height:380px}.reasons{padding:85px 22px}.reasons-grid{grid-template-columns:1fr 1fr}.reason{padding:25px 20px;min-height:195px}.letter{padding:85px 25px}.secret{padding:75px 22px}.secret-box{padding:40px 20px}}
+@media(max-width:430px){.navlinks{display:none}.hero-content{padding-inline:22px}h1{font-size:clamp(3.5rem,18vw,5.3rem)}.tiles{grid-template-columns:1fr}.tile:first-child{grid-column:auto;min-height:360px}.tile{min-height:260px}.reasons-grid{grid-template-columns:1fr}.reason{min-height:160px}.note{padding:85px 23px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style></head>
+<body><div class="noise"></div>
+<header id="top">
+<div class="hero-photo"></div><div class="hero-shade"></div>
+<nav class="nav"><a class="logo" href="#top"><span>✳</span> с любовью, маме</a><div class="navlinks"><a href="#story">История</a><a href="#reasons">За что люблю</a><a href="#letter">Письмо</a></div></nav>
+<div class="hero-content"><div class="eyebrow">особенный день · для особенного человека</div><h1>Мамочка,<em>ты — моё сердце.</em></h1><p class="lead">Есть тысячи способов сказать «люблю». Я собрал здесь несколько из них — только для тебя. Спасибо за всё, что невозможно измерить словами.</p><div class="actions"><a class="btn primary" href="#letter">Прочитать письмо <span>↗</span></a><a class="btn" href="#story">Почувствовать тепло <span>↓</span></a></div></div>
+<div class="hero-caption">самая нежная история любви</div><div class="scroll">листай медленно — это для тебя</div>
 </header>
-
-<section class="section reveal" id="letter">
-<div class="section-head"><div class="kicker">несколько важных слов</div><h2>Если бы можно было обнять словами…</h2><p>То получилось бы примерно так.</p></div>
-<div class="letter"><p>Мам, спасибо тебе за то, что ты есть. За руки, которые умеют успокоить, за слова, которые поддерживают, и за любовь, которой никогда не нужно заслуживать.</p><p>Пусть у тебя будет больше поводов улыбаться, больше времени на себя и больше дней, когда всё складывается именно так, как хочется тебе.</p><p>Ты заслуживаешь не только благодарности по праздникам, а нежности, заботы и счастья каждый день.</p><div class="sign">Я очень тебя люблю. Сегодня, завтра и всегда. ❤️</div></div>
-</section>
-
-<section class="section reveal" id="reasons">
-<div class="section-head"><div class="kicker">это всё о тебе</div><h2>Шесть причин, почему ты — чудо</h2><p>Нажми на любую карточку. В каждой спрятано маленькое признание.</p></div>
-<div class="reasons">
-<button class="reason" data-note="Твоя забота чувствуется даже на расстоянии. Рядом с тобой всегда становится спокойнее."><span class="symbol">🫶</span><strong>Твоя забота</strong><small>Ты умеешь быть рядом именно тогда, когда это нужнее всего.</small></button>
-<button class="reason" data-note="Ты научила меня не сдаваться, верить в хорошее и идти вперёд."><span class="symbol">🌷</span><strong>Твоя мудрость</strong><small>Твои советы остаются со мной, даже когда тебя нет рядом.</small></button>
-<button class="reason" data-note="Твой смех — один из самых любимых звуков на свете. Пусть его будет как можно больше!"><span class="symbol">☀️</span><strong>Твоя улыбка</strong><small>С ней даже самый обычный день становится светлее.</small></button>
-<button class="reason" data-note="Спасибо за тысячи маленьких вещей, которые ты делаешь и даже не считаешь чем-то особенным."><span class="symbol">🍯</span><strong>Твоё тепло</strong><small>Ты умеешь превратить обычный дом в самое уютное место.</small></button>
-<button class="reason" data-note="Ты уникальная. И мне невероятно повезло, что именно ты — моя мама."><span class="symbol">✨</span><strong>Твоя душа</strong><small>В тебе столько доброты, силы и красоты.</small></button>
-<button class="reason" data-note="Что бы ни происходило, знай: я всегда на твоей стороне и очень тебя люблю."><span class="symbol">❤️</span><strong>Просто ты</strong><small>Тебя не нужно ни с кем сравнивать. Ты — самая лучшая.</small></button>
-</div>
-</section>
-
-<section class="section reveal" id="bouquet-section">
-<div class="section-head"><div class="kicker">букет, который не завянет</div><h2>Цветы специально для тебя</h2><p>Выбери настроение букета — он тут же изменится.</p></div>
-<div class="bouquet-wrap"><div class="bouquet-art"><div class="bouquet-emoji" id="bouquet">💐</div></div><div class="bouquet-controls"><h3>Какой букет сегодня?</h3><p>Каждый цветок — маленькое пожелание. Пусть в твоей жизни всегда будет место красоте, спокойствию и радости.</p><div class="bouquet-buttons"><button class="chip" data-bouquet="💐" aria-pressed="true">Нежный</button><button class="chip" data-bouquet="🌷" aria-pressed="false">Тюльпаны</button><button class="chip" data-bouquet="🌹" aria-pressed="false">Розы</button><button class="chip" data-bouquet="🌻" aria-pressed="false">Солнечный</button><button class="chip" data-bouquet="🌸" aria-pressed="false">Сакура</button></div></div></div>
-</section>
-
-<section class="section reveal" id="memories">
-<div class="section-head"><div class="kicker">на память</div><h2>Самое ценное — моменты вместе</h2></div>
-<div class="memory"><div class="memory-card"><blockquote>«Дом — это не место. Дом — это тот человек, к которому всегда хочется возвращаться».</blockquote><cite>И для меня этот человек — ты, мам.</cite></div><div class="memory-side"><p>Вспомни сегодня что-нибудь хорошее: нашу смешную историю, тёплый вечер, прогулку или обычный разговор на кухне. Именно из таких мгновений и складывается самое настоящее счастье.</p><p>Пусть впереди нас ждёт ещё очень много таких воспоминаний.</p></div></div>
-</section>
-
-<section class="section secret reveal" id="secret-section">
-<div class="secret-lock">💌</div><div class="kicker">маленький секрет</div><h2>А здесь кое-что только для тебя</h2><p style="color:var(--muted)">Нажми на кнопку — и откроется последнее послание.</p><button class="btn btn-primary" id="secretButton">Открыть секрет ♡</button><div class="secret-message" id="secretMessage">Мамочка, если вдруг ты когда-нибудь усомнишься, насколько ты важна, просто вспомни: ты — огромная часть моего сердца. Спасибо за жизнь, за любовь и за то, что ты моя мама. Я тебя люблю бесконечно. ❤️</div></section>
-<footer class="footer">Сделано с бесконечной любовью <span class="heart">♥</span> для самой лучшей мамы</footer>
-</main>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<main>
+<section class="intro reveal" id="story"><div><div class="kicker">моя самая важная история</div><h2>Всё хорошее во мне начинается с тебя.</h2></div><div><p class="intro-copy">Ты — мой тихий причал, мой самый родной голос и человек, рядом с которым мир становится добрее. <em>Твоя любовь — это то, что я ношу с собой каждый день.</em></p><div class="signature">С Днём матери. Крепко обнимаю. ♡</div></div></section>
+<div class="divider"></div>
+<section class="gallery reveal"><div class="gallery-head"><div><div class="kicker">красота для тебя</div><h2 class="section-title">Немного нежности<br>в каждом кадре.</h2></div><p>Пусть этот маленький уголок будет наполнен тем, чего тебе хочется чаще: красотой, покоем и цветами.</p></div>
+<div class="tiles">
+<div class="tile"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=85" alt="Нежные цветы в розовых оттенках" loading="lazy"><span>Для самой любимой</span></div>
+<div class="tile"><img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=900&q=85" alt="Цветочная композиция" loading="lazy"><span>Тепло и красота</span></div>
+<div class="tile"><img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=900&q=85" alt="Букет цветов" loading="lazy"><span>Просто так, от души</span></div>
+</div></section>
+<section class="note reveal"><div class="kicker">одно большое спасибо</div><blockquote>«Там, где есть твоя любовь, <em>всегда есть дом.</em>»</blockquote><p>И я всегда буду благодарен за это чувство.</p></section>
+<section class="reasons reveal" id="reasons"><div class="kicker">шесть маленьких признаний</div><h2 class="section-title">За что я люблю тебя.</h2><div class="reasons-grid">
+<button class="reason" data-msg="Спасибо, что умеешь услышать даже то, о чём я не могу сказать вслух."><span class="num">01 / 06</span><h3>За понимание</h3><p>Ты чувствуешь сердцем и всегда находишь нужные слова.</p></button>
+<button class="reason" data-msg="Твоя поддержка даёт мне смелость пробовать снова и не бояться ошибок."><span class="num">02 / 06</span><h3>За веру в меня</h3><p>Даже когда я сомневаюсь, ты продолжаешь верить.</p></button>
+<button class="reason" data-msg="Твоя улыбка делает обычный день чуточку светлее. Улыбайся чаще!"><span class="num">03 / 06</span><h3>За улыбку</h3><p>В ней столько света, что хватает на целый мир.</p></button>
+<button class="reason" data-msg="Спасибо за заботу в мелочах, которую я замечаю и очень ценю."><span class="num">04 / 06</span><h3>За заботу</h3><p>В маленьких поступках живёт огромная любовь.</p></button>
+<button class="reason" data-msg="Ты показала мне, что доброта — это сила. Я учусь у тебя каждый день."><span class="num">05 / 06</span><h3>За доброту</h3><p>Ты умеешь делать мир мягче и человечнее.</p></button>
+<button class="reason" data-msg="И главное — за то, что ты именно моя мама. Мне невероятно повезло."><span class="num">06 / 06</span><h3>За то, что ты — ты</h3><p>Без условий, без сравнений. Просто люблю.</p></button>
+</div></section>
+<section class="letter reveal" id="letter"><div class="letter-inner"><div class="kicker">письмо, которое хочется сохранить</div><h2 class="section-title">Мам, это всё<br>для тебя.</h2><div class="letter-body"><p>Я не всегда говорю об этом вслух, но я очень ценю всё, что ты для меня делаешь. Спасибо за твоё терпение, за бессонные переживания, за поддержку и за то, что ты рядом не только в хорошие дни.</p><p>Я хочу, чтобы ты чаще отдыхала, чаще выбирала себя, исполняла свои желания и никогда не забывала, насколько ты замечательная. Пусть в твоей жизни будет больше лёгкости, приятных неожиданностей, путешествий, смеха и спокойных счастливых вечеров.</p><p>И знай: сколько бы мне ни было лет, мне всегда будет важно, чтобы ты улыбалась. Ты заслуживаешь всего самого доброго на свете.</p></div><div class="letter-sign">С бесконечной любовью — твой ребёнок. ♡</div></div></section>
+<section class="secret reveal"><div class="secret-box"><div class="secret-icon">✉</div><div class="kicker">последнее, но самое важное</div><h2 class="section-title">Открой, когда захочешь улыбнуться.</h2><button class="btn primary" id="secretBtn">Открыть моё послание <span>♡</span></button><p class="secret-text" id="secretText">Мамочка, ты не обязана быть сильной каждую секунду. Пусть сегодня о тебе позаботятся так же нежно, как ты заботилась обо мне. Я рядом. Я горжусь тобой. И я люблю тебя больше, чем помещается на этой странице. ❤️</p></div></section>
+</main><footer>сделано с <span>любовью</span> · для самой лучшей мамы</footer><div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
-(()=>{
-const toast=document.getElementById('toast');let toastTimer;
-function say(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2800)}
-document.getElementById('openLetter').addEventListener('click',()=>document.getElementById('letter').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
-document.querySelectorAll('.reason').forEach(card=>card.addEventListener('click',()=>say(card.dataset.note)));
-document.querySelectorAll('[data-bouquet]').forEach(button=>button.addEventListener('click',()=>{
-document.querySelectorAll('[data-bouquet]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
-const flower=document.getElementById('bouquet');flower.textContent=button.dataset.bouquet;flower.classList.remove('pop');void flower.offsetWidth;flower.classList.add('pop');say('Этот букет — только для тебя 🌸');
-}));
-document.getElementById('secretButton').addEventListener('click',()=>{const message=document.getElementById('secretMessage');message.classList.toggle('open');document.getElementById('secretButton').textContent=message.classList.contains('open')?'Спрятать послание':'Открыть секрет ♡';if(message.classList.contains('open'))say('Обнимаю тебя крепко-крепко ❤️')});
-document.getElementById('makeMagic').addEventListener('click',()=>{burst(innerWidth/2,innerHeight*.45,42);say('Пусть сегодня случится что-нибудь прекрасное ✨')});
-const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-const canvas=document.getElementById('petals'),ctx=canvas.getContext('2d');let w=0,h=0,petals=[],raf=0;
-function resize(){const dpr=Math.min(devicePixelRatio||1,2);w=innerWidth;h=innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
-function petal(x=Math.random()*w,y=-20){return{x,y,size:3+Math.random()*5,speed:.35+Math.random()*.75,drift:(Math.random()-.5)*.7,angle:Math.random()*6.28,spin:(Math.random()-.5)*.025,alpha:.25+Math.random()*.4}}
-function draw(){ctx.clearRect(0,0,w,h);for(const p of petals){p.y+=p.speed;p.x+=p.drift+Math.sin(p.angle)*.25;p.angle+=p.spin;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.angle);ctx.globalAlpha=p.alpha;ctx.fillStyle='#d99096';ctx.beginPath();ctx.ellipse(0,0,p.size,p.size*.55,0,0,Math.PI*2);ctx.fill();ctx.restore()}petals=petals.filter(p=>p.y<h+20);while(petals.length< (w<600?13:24))petals.push(petal());if(!reduced)raf=requestAnimationFrame(draw)}
-function burst(x,y,count){for(let i=0;i<count;i++){const p=petal(x+(Math.random()-.5)*100,y+(Math.random()-.5)*40);p.speed=1+Math.random()*2;p.drift=(Math.random()-.5)*3;p.alpha=.8;petals.push(p)}}
-resize();if(!reduced)draw();addEventListener('resize',()=>{resize();if(!reduced&&!raf)draw()});
-document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(raf);raf=0}else if(!reduced&&!raf)draw()});
+(()=>{const toast=document.getElementById('toast');let timer;function show(t){toast.textContent=t;toast.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>toast.classList.remove('show'),3000)}
+document.querySelectorAll('[data-msg]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.msg)));
+document.getElementById('secretBtn').addEventListener('click',()=>{const p=document.getElementById('secretText');p.classList.toggle('open');document.getElementById('secretBtn').innerHTML=p.classList.contains('open')?'Спрятать послание <span>↗</span>':'Открыть моё послание <span>♡</span>';if(p.classList.contains('open'))show('Это послание — крепкое объятие для тебя ❤️')});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 })();
-</script>
-</body>
-</html>
+</script></body></html>
