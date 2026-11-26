@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff4f0">
+<meta name="description" content="Тёплое интерактивное поздравление с Днём матери.">
+<title>Мамочке — с любовью ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#493b3b;--muted:#887675;--rose:#c76e78;--rose-dark:#a94f61;--cream:#fff9f3;--peach:#f8e6dc;--line:#eedbd2;--shadow:0 24px 70px #8f55521c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% 8%,#fff 0,transparent 34%),radial-gradient(ellipse at 90% 25%,#f9e2df 0,transparent 32%),linear-gradient(145deg,#fff8f0,#f7e9e2 55%,#f9efeb);color:var(--ink);font-family:"DM Sans",sans-serif;min-height:100vh;overflow-x:hidden}
+button{font:inherit}.ambient{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.orb{position:absolute;border-radius:50%;filter:blur(2px);opacity:.35;animation:drift 18s ease-in-out infinite alternate}.orb.one{width:260px;height:260px;background:#f2c4c5;top:8%;left:-100px}.orb.two{width:190px;height:190px;background:#f4d9a9;right:-70px;top:48%;animation-delay:-7s}.orb.three{width:140px;height:140px;background:#e9c8d1;left:18%;bottom:-60px;animation-delay:-11s}
+main{position:relative;z-index:1;width:min(1080px,calc(100% - 32px));margin:auto;padding:28px 0 70px}
+.topline{display:flex;justify-content:space-between;align-items:center;color:#9b7f7a;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}.topline span:last-child{letter-spacing:.05em}
+.hero{min-height:600px;display:grid;place-items:center;text-align:center;position:relative;padding:65px 20px 48px}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border:1px solid #edd5ce;border-radius:99px;background:#fff9f4b8;color:#a96e70;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}.eyebrow:before,.eyebrow:after{content:"✦";font-size:.7rem;color:#d59a8f}
+h1,h2,h3,p{margin-top:0}h1{font:600 clamp(3.2rem,9vw,7.3rem)/.99 "Playfair Display",serif;letter-spacing:-.055em;margin:27px 0 18px;color:#573f40}h1 em{font-weight:500;color:var(--rose);display:block}.hero-copy{max-width:570px;margin:0 auto;color:#806d6b;font-size:clamp(1rem,2vw,1.15rem);line-height:1.85}.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{border:0;border-radius:99px;padding:14px 22px;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;display:inline-flex;align-items:center;gap:9px;font-weight:700}.btn:hover{transform:translateY(-3px)}.btn-primary{background:var(--rose);color:white;box-shadow:0 12px 24px #c76e7833}.btn-primary:hover{background:var(--rose-dark);box-shadow:0 15px 30px #c76e7845}.btn-soft{background:#fff9f3;color:#94676a;border:1px solid var(--line)}
+.hero-flower{font-size:clamp(3rem,8vw,5rem);margin-top:34px;filter:drop-shadow(0 12px 10px #a9686920);animation:sway 5s ease-in-out infinite;display:inline-block}
+.scroll-note{font-size:.76rem;color:#a98d87;letter-spacing:.12em;text-transform:uppercase;margin-top:28px}
+.section{margin:28px 0;padding:clamp(25px,5vw,54px);border:1px solid #fff;background:#fffaf5d9;border-radius:30px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}.section-head{text-align:center;margin-bottom:30px}.kicker{color:#bd7c7b;text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:700}.section h2{font:600 clamp(2rem,5vw,3.2rem)/1.12 "Playfair Display",serif;margin:10px 0;color:#594243}.section-head p{color:var(--muted);line-height:1.7;margin:0 auto;max-width:560px}
+.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.reason{min-height:185px;padding:23px 20px;border-radius:22px;background:linear-gradient(145deg,#fff,#fff5f0);border:1px solid #f0dfd8;cursor:pointer;text-align:left;transition:transform .25s,box-shadow .25s,border-color .25s;color:var(--ink)}.reason:hover,.reason:focus-visible{transform:translateY(-5px);box-shadow:0 16px 30px #9b66631a;border-color:#e5b8b5;outline:none}.reason .symbol{font-size:1.8rem;display:block;margin-bottom:15px}.reason strong{display:block;font:600 1.15rem "Playfair Display",serif;margin-bottom:8px}.reason small{color:#907b78;line-height:1.55;font-size:.87rem}
+.letter{max-width:730px;margin:auto;text-align:center}.letter p{font:500 clamp(1.1rem,2.5vw,1.45rem)/1.9 "Playfair Display",serif;color:#6a5352}.letter .sign{font:italic 1rem "DM Sans",sans-serif;color:#b16e75;margin-top:22px}
+.bouquet-wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.bouquet-art{min-height:270px;display:grid;place-items:center;border-radius:25px;background:radial-gradient(circle at 50% 40%,#fff 0,#fcece7 62%,#f7e2dc 100%);position:relative;overflow:hidden}.bouquet-art:before,.bouquet-art:after{content:"";position:absolute;width:170px;height:170px;border:1px solid #fff9;border-radius:50%}.bouquet-art:after{width:230px;height:230px}.bouquet-emoji{font-size:clamp(5rem,12vw,8rem);z-index:1;filter:drop-shadow(0 12px 12px #95585a26);transition:transform .4s}.bouquet-emoji.pop{transform:scale(1.2) rotate(8deg)}.bouquet-controls h3{font:600 1.8rem "Playfair Display",serif;margin-bottom:10px}.bouquet-controls p{color:var(--muted);line-height:1.7}.bouquet-buttons{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:10px 14px;cursor:pointer;color:#8b6667}.chip[aria-pressed=true]{background:#f6e2df;border-color:#d9a6a3;color:#92545b}
+.memory{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}.memory-card{padding:28px;border-radius:24px;background:#f9eee8;border:1px solid #efddd5}.memory-card blockquote{font:500 1.35rem/1.65 "Playfair Display",serif;margin:0;color:#6c5050}.memory-card cite{display:block;margin-top:17px;color:#a87a77;font-style:normal;font-size:.85rem}.memory-side p{color:var(--muted);line-height:1.8}.memory-side .btn{margin-top:6px}
+.secret{text-align:center;background:linear-gradient(135deg,#f8e8e4,#fff8f1)}.secret-lock{font-size:2rem}.secret-message{display:none;max-width:620px;margin:22px auto 0;font:500 1.4rem/1.7 "Playfair Display",serif;color:#8c555e}.secret-message.open{display:block;animation:rise .6s both}
+.footer{text-align:center;padding:38px 10px 10px;color:#a48983;font-size:.82rem}.footer .heart{color:#c76e78}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#5b4546;color:white;padding:13px 20px;border-radius:99px;box-shadow:0 12px 35px #543b3b30;z-index:10;transition:.3s;max-width:calc(100% - 30px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+#petals{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+@keyframes drift{to{transform:translate(45px,-35px) scale(1.12)}}@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:720px){.hero{min-height:540px;padding-top:55px}.reasons{grid-template-columns:1fr 1fr}.bouquet-wrap,.memory{grid-template-columns:1fr}.bouquet-art{min-height:220px}.topline{font-size:.65rem}}
+@media(max-width:460px){main{width:min(100% - 20px,1080px);padding-top:18px}.hero{padding-inline:8px}.reasons{grid-template-columns:1fr}.reason{min-height:auto}.section{border-radius:23px;padding:25px 19px}.topline span:last-child{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"><i class="orb one"></i><i class="orb two"></i><i class="orb three"></i></div>
+<canvas id="petals" aria-hidden="true"></canvas>
+<main>
+<div class="topline"><span>маленькое признание в любви</span><span>сделано с теплом · ♡</span></div>
+<header class="hero">
+<div>
+<div class="eyebrow">самому дорогому человеку</div>
+<h1>Мамочка,<em>это для тебя</em></h1>
+<p class="hero-copy">Сегодня хочется не просто сказать «спасибо», а напомнить, как сильно ты любима. За твою заботу, терпение, доброту и за то особенное тепло, которое всегда рядом.</p>
+<div class="hero-actions"><button class="btn btn-primary" id="openLetter">Открыть письмо <span>♡</span></button><button class="btn btn-soft" id="makeMagic">Немного волшебства ✨</button></div>
+<div class="hero-flower" aria-hidden="true">💐</div>
+<div class="scroll-note">листай ниже — там ещё кое-что</div>
+</div>
+</header>
+
+<section class="section reveal" id="letter">
+<div class="section-head"><div class="kicker">несколько важных слов</div><h2>Если бы можно было обнять словами…</h2><p>То получилось бы примерно так.</p></div>
+<div class="letter"><p>Мам, спасибо тебе за то, что ты есть. За руки, которые умеют успокоить, за слова, которые поддерживают, и за любовь, которой никогда не нужно заслуживать.</p><p>Пусть у тебя будет больше поводов улыбаться, больше времени на себя и больше дней, когда всё складывается именно так, как хочется тебе.</p><p>Ты заслуживаешь не только благодарности по праздникам, а нежности, заботы и счастья каждый день.</p><div class="sign">Я очень тебя люблю. Сегодня, завтра и всегда. ❤️</div></div>
+</section>
+
+<section class="section reveal">
+<div class="section-head"><div class="kicker">это всё о тебе</div><h2>Шесть причин, почему ты — чудо</h2><p>Нажми на любую карточку. В каждой спрятано маленькое признание.</p></div>
+<div class="reasons">
+<button class="reason" data-note="Твоя забота чувствуется даже на расстоянии. Рядом с тобой всегда становится спокойнее."><span class="symbol">🫶</span><strong>Твоя забота</strong><small>Ты умеешь быть рядом именно тогда, когда это нужнее всего.</small></button>
+<button class="reason" data-note="Ты научила меня не сдаваться, верить в хорошее и идти вперёд."><span class="symbol">🌷</span><strong>Твоя мудрость</strong><small>Твои советы остаются со мной, даже когда тебя нет рядом.</small></button>
+<button class="reason" data-note="Твой смех — один из самых любимых звуков на свете. Пусть его будет как можно больше!"><span class="symbol">☀️</span><strong>Твоя улыбка</strong><small>С ней даже самый обычный день становится светлее.</small></button>
+<button class="reason" data-note="Спасибо за тысячи маленьких вещей, которые ты делаешь и даже не считаешь чем-то особенным."><span class="symbol">🍯</span><strong>Твоё тепло</strong><small>Ты умеешь превратить обычный дом в самое уютное место.</small></button>
+<button class="reason" data-note="Ты уникальная. И мне невероятно повезло, что именно ты — моя мама."><span class="symbol">✨</span><strong>Твоя душа</strong><small>В тебе столько доброты, силы и красоты.</small></button>
+<button class="reason" data-note="Что бы ни происходило, знай: я всегда на твоей стороне и очень тебя люблю."><span class="symbol">❤️</span><strong>Просто ты</strong><small>Тебя не нужно ни с кем сравнивать. Ты — самая лучшая.</small></button>
+</div>
+</section>
+
+<section class="section reveal">
+<div class="section-head"><div class="kicker">букет, который не завянет</div><h2>Цветы специально для тебя</h2><p>Выбери настроение букета — он тут же изменится.</p></div>
+<div class="bouquet-wrap"><div class="bouquet-art"><div class="bouquet-emoji" id="bouquet">💐</div></div><div class="bouquet-controls"><h3>Какой букет сегодня?</h3><p>Каждый цветок — маленькое пожелание. Пусть в твоей жизни всегда будет место красоте, спокойствию и радости.</p><div class="bouquet-buttons"><button class="chip" data-bouquet="💐" aria-pressed="true">Нежный</button><button class="chip" data-bouquet="🌷" aria-pressed="false">Тюльпаны</button><button class="chip" data-bouquet="🌹" aria-pressed="false">Розы</button><button class="chip" data-bouquet="🌻" aria-pressed="false">Солнечный</button><button class="chip" data-bouquet="🌸" aria-pressed="false">Сакура</button></div></div></div>
+</section>
+
+<section class="section reveal">
+<div class="section-head"><div class="kicker">на память</div><h2>Самое ценное — моменты вместе</h2></div>
+<div class="memory"><div class="memory-card"><blockquote>«Дом — это не место. Дом — это тот человек, к которому всегда хочется возвращаться».</blockquote><cite>И для меня этот человек — ты, мам.</cite></div><div class="memory-side"><p>Вспомни сегодня что-нибудь хорошее: нашу смешную историю, тёплый вечер, прогулку или обычный разговор на кухне. Именно из таких мгновений и складывается самое настоящее счастье.</p><p>Пусть впереди нас ждёт ещё очень много таких воспоминаний.</p></div></div>
+</section>
+
+<section class="section secret reveal">
+<div class="secret-lock">💌</div><div class="kicker">маленький секрет</div><h2>А здесь кое-что только для тебя</h2><p style="color:var(--muted)">Нажми на кнопку — и откроется последнее послание.</p><button class="btn btn-primary" id="secretButton">Открыть секрет ♡</button><div class="secret-message" id="secretMessage">Мамочка, если вдруг ты когда-нибудь усомнишься, насколько ты важна, просто вспомни: ты — огромная часть моего сердца. Спасибо за жизнь, за любовь и за то, что ты моя мама. Я тебя люблю бесконечно. ❤️</div></section>
+<footer class="footer">Сделано с бесконечной любовью <span class="heart">♥</span> для самой лучшей мамы</footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(()=>{
+const toast=document.getElementById('toast');let toastTimer;
+function say(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2800)}
+document.getElementById('openLetter').addEventListener('click',()=>document.getElementById('letter').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
+document.querySelectorAll('.reason').forEach(card=>card.addEventListener('click',()=>say(card.dataset.note)));
+document.querySelectorAll('[data-bouquet]').forEach(button=>button.addEventListener('click',()=>{
+document.querySelectorAll('[data-bouquet]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+const flower=document.getElementById('bouquet');flower.textContent=button.dataset.bouquet;flower.classList.remove('pop');void flower.offsetWidth;flower.classList.add('pop');say('Этот букет — только для тебя 🌸');
+}));
+document.getElementById('secretButton').addEventListener('click',()=>{const message=document.getElementById('secretMessage');message.classList.toggle('open');document.getElementById('secretButton').textContent=message.classList.contains('open')?'Спрятать послание':'Открыть секрет ♡';if(message.classList.contains('open'))say('Обнимаю тебя крепко-крепко ❤️')});
+document.getElementById('makeMagic').addEventListener('click',()=>{burst(innerWidth/2,innerHeight*.45,42);say('Пусть сегодня случится что-нибудь прекрасное ✨')});
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const canvas=document.getElementById('petals'),ctx=canvas.getContext('2d');let w=0,h=0,petals=[],raf=0;
+function resize(){const dpr=Math.min(devicePixelRatio||1,2);w=innerWidth;h=innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+function petal(x=Math.random()*w,y=-20){return{x,y,size:3+Math.random()*5,speed:.35+Math.random()*.75,drift:(Math.random()-.5)*.7,angle:Math.random()*6.28,spin:(Math.random()-.5)*.025,alpha:.25+Math.random()*.4}}
+function draw(){ctx.clearRect(0,0,w,h);for(const p of petals){p.y+=p.speed;p.x+=p.drift+Math.sin(p.angle)*.25;p.angle+=p.spin;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.angle);ctx.globalAlpha=p.alpha;ctx.fillStyle='#d99096';ctx.beginPath();ctx.ellipse(0,0,p.size,p.size*.55,0,0,Math.PI*2);ctx.fill();ctx.restore()}petals=petals.filter(p=>p.y<h+20);while(petals.length< (w<600?13:24))petals.push(petal());if(!reduced)raf=requestAnimationFrame(draw)}
+function burst(x,y,count){for(let i=0;i<count;i++){const p=petal(x+(Math.random()-.5)*100,y+(Math.random()-.5)*40);p.speed=1+Math.random()*2;p.drift=(Math.random()-.5)*3;p.alpha=.8;petals.push(p)}}
+resize();if(!reduced)draw();addEventListener('resize',()=>{resize();if(!reduced&&!raf)draw()});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(raf);raf=0}else if(!reduced&&!raf)draw()});
+})();
+</script>
+</body>
+</html>
