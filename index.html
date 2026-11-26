@@ -62,9 +62,10 @@ main{background:var(--paper);color:var(--wine);position:relative}
 .message-overlay.open .message-dialog{transform:translateY(0) scale(1)}
 .message-close{position:absolute;right:13px;top:10px;border:0;background:transparent;color:#9b7379;font-size:1.8rem;cursor:pointer;width:40px;height:40px}
 .envelope-stage{height:142px;display:grid;place-items:center;position:relative;margin:0 auto 12px}
-.envelope{position:relative;width:118px;height:78px;background:#d98e9c;border-radius:4px;box-shadow:0 12px 24px #7b354322;animation:envelopeArrive .6s both}
-.envelope:before{content:"";position:absolute;inset:0;background:#edb5bd;clip-path:polygon(0 0,50% 58%,100% 0);transform-origin:top;animation:flapOpen .8s .35s cubic-bezier(.2,.7,.2,1) both;z-index:2}
-.envelope:after{content:"♡";position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-42%);font-size:2rem;color:#fff8f2}
+.envelope{position:relative;width:118px;height:78px;background:#f4cbd0;border-radius:4px;box-shadow:0 12px 24px #7b354322;animation:envelopeArrive .6s both;perspective:700px;isolation:isolate}
+.envelope:before{content:"";position:absolute;inset:0;background:#d98e9c;clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);z-index:3}
+.envelope:after{content:"♡";position:absolute;z-index:4;left:50%;top:65%;transform:translate(-50%,-50%);font-size:1.65rem;color:#fff8f2}
+.envelope-flap{position:absolute;left:0;top:0;width:100%;height:100%;background:#efb4be;clip-path:polygon(0 0,100% 0,50% 58%);transform-origin:50% 0;transform:rotateX(0deg);backface-visibility:visible;z-index:5;animation:flapOpen .9s .45s cubic-bezier(.2,.75,.25,1) both}
 .letter-sheet{position:absolute;z-index:1;left:50%;top:50%;width:90px;height:62px;background:#fffaf4;border-radius:3px;transform:translate(-50%,-18%);animation:letterRise .8s .55s cubic-bezier(.2,.8,.2,1) both}
 .heart-particle{position:absolute;color:#d77f91;font-size:20px;opacity:0;animation:heartFloat 2.2s ease-out infinite}
 .heart-particle.h1{left:18%;top:38%;animation-delay:.55s}.heart-particle.h2{right:17%;top:24%;font-size:15px;animation-delay:.9s}.heart-particle.h3{right:25%;bottom:7%;font-size:24px;animation-delay:1.2s}
@@ -72,7 +73,7 @@ main{background:var(--paper);color:var(--wine);position:relative}
 .message-content{font:500 clamp(1.35rem,4vw,1.8rem)/1.65 'Playfair Display',serif;color:#70575a;margin:0 auto;max-width:420px;animation:messageAppear .65s .7s both}
 .message-sign{font:italic 1rem 'Playfair Display',serif;color:#b56f7b;margin-top:22px}
 @keyframes envelopeArrive{from{opacity:0;transform:translateY(20px) scale(.8)}to{opacity:1;transform:none}}
-@keyframes flapOpen{0%{clip-path:polygon(0 0,50% 58%,100% 0)}100%{clip-path:polygon(0 0,50% -45%,100% 0)}}
+@keyframes flapOpen{0%{transform:rotateX(0deg)}65%{transform:rotateX(-195deg)}100%{transform:rotateX(-180deg)}}
 @keyframes letterRise{0%{transform:translate(-50%,-18%)}100%{transform:translate(-50%,-72%)}}
 @keyframes heartFloat{0%{opacity:0;transform:translateY(14px) scale(.6) rotate(-12deg)}25%{opacity:1}100%{opacity:0;transform:translateY(-48px) scale(1.15) rotate(12deg)}}
 @keyframes messageAppear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
@@ -117,7 +118,7 @@ footer{background:var(--wine);color:#c9aeb0;text-align:center;padding:36px 20px;
 </main><footer>сделано с <span>любовью</span> · для самой лучшей мамы</footer><div class="message-overlay" id="messageOverlay" aria-hidden="true">
 <div class="message-dialog" role="dialog" aria-modal="true" aria-labelledby="messageLabel">
 <button class="message-close" id="messageClose" aria-label="Закрыть послание">×</button>
-<div class="envelope-stage" aria-hidden="true"><span class="heart-particle h1">♥</span><span class="heart-particle h2">♡</span><span class="heart-particle h3">♥</span><div class="letter-sheet"></div><div class="envelope"></div></div>
+<div class="envelope-stage" aria-hidden="true"><span class="heart-particle h1">♥</span><span class="heart-particle h2">♡</span><span class="heart-particle h3">♥</span><div class="letter-sheet"></div><div class="envelope"><span class="envelope-flap"></span></div></div>
 <div class="message-label" id="messageLabel">маленькое послание для тебя</div>
 <p class="message-content" id="messageContent"></p><div class="message-sign">с любовью, всегда ♡</div>
 </div></div>
