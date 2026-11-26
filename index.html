@@ -33,22 +33,77 @@ h1,h2,h3,p{margin-top:0}h1{font:600 clamp(3.2rem,9vw,7.3rem)/.99 "Playfair Displ
 @media(max-width:720px){.hero{min-height:540px;padding-top:55px}.reasons{grid-template-columns:1fr 1fr}.bouquet-wrap,.memory{grid-template-columns:1fr}.bouquet-art{min-height:220px}.topline{font-size:.65rem}}
 @media(max-width:460px){main{width:min(100% - 20px,1080px);padding-top:18px}.hero{padding-inline:8px}.reasons{grid-template-columns:1fr}.reason{min-height:auto}.section{border-radius:23px;padding:25px 19px}.topline span:last-child{display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
-</style>
+
+/* Visual refresh: bespoke rose palette, editorial hero and responsive navigation */
+:root{--ink:#fff1ee;--muted:#d2b4b1;--rose:#ff8fb5;--rose-dark:#ff6f9e;--cream:#2b151b;--peach:#49232e;--line:#75404e;--shadow:0 24px 70px #08030866}
+html{scroll-padding-top:90px}
+body{background:radial-gradient(ellipse at 76% 12%,#783344 0,transparent 36%),radial-gradient(ellipse at 10% 80%,#4c1e2b 0,transparent 36%),linear-gradient(145deg,#180e14,#29131d 52%,#170d13);color:var(--ink)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.16;background-image:radial-gradient(#ffd9e3 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
+main{width:min(1240px,calc(100% - 48px));padding-top:16px}
+.topline{display:none}
+.site-nav{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:13px 18px;border:1px solid #ffffff22;border-radius:999px;background:#24151bbd;backdrop-filter:blur(18px);box-shadow:0 10px 35px #08030833}
+.brand{font:italic 1.15rem "Playfair Display",serif;color:#ffe3e9;text-decoration:none;white-space:nowrap}.brand span{font:2rem sans-serif;color:#ff8fb5;vertical-align:-3px;margin-right:5px}
+.nav-links{display:flex;gap:clamp(12px,2.4vw,30px);align-items:center}.nav-links a{font-size:.88rem;color:#f4dce1;text-decoration:none;transition:color .2s}.nav-links a:hover{color:#ff8fb5}.nav-heart{font-size:1.8rem;color:#ff8fb5}
+.hero{min-height:590px;display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:12px;text-align:left;padding:35px 12px 50px;overflow:hidden}
+.hero-copy-wrap{position:relative;z-index:1;padding:28px 0 25px 18px}
+.eyebrow{background:#ffffff0d;border-color:#ffb5c822;color:#ffc0d0}
+.eyebrow:before,.eyebrow:after{color:#ff9fbd}
+h1{font-size:clamp(3.7rem,7.2vw,7rem);color:#fff0ed;line-height:.98;margin:28px 0 23px}
+h1 em{color:#ff91b6}
+.hero-copy{max-width:510px;color:#e6c8c8;font-size:clamp(1.05rem,1.7vw,1.22rem);line-height:1.8;margin:0}
+.hero-actions{justify-content:flex-start;margin-top:30px}
+.btn-primary{background:linear-gradient(110deg,#ff8fb5,#f66c9e);color:#371923;box-shadow:0 12px 35px #f76c9e40}
+.btn-primary:hover{background:#ffabc7;box-shadow:0 15px 40px #f76c9e55}
+.btn-soft{background:#ffffff0c;color:#ffe2e9;border-color:#ffffff28}
+.scroll-note{color:#c99ca8;text-align:left;margin-top:26px}
+.hero-art{position:relative;display:grid;place-items:center;min-width:0}
+.hero-art:before{content:"";position:absolute;width:75%;aspect-ratio:1;border-radius:50%;background:#f879a51c;filter:blur(50px)}
+.hero-art img{position:relative;width:min(100%,650px);height:auto;filter:drop-shadow(0 35px 55px #08030880);animation:bouquetFloat 7s ease-in-out infinite}
+.section{background:linear-gradient(145deg,#321b25eF,#25141deF);border:1px solid #ffffff1c;box-shadow:0 24px 70px #08030855}
+.section h2{color:#fff0ed}
+.section-head p,.reason small,.bouquet-controls p,.memory-side p{color:#d1b2b4}
+.kicker{color:#ff9bb9}
+.reason{background:linear-gradient(145deg,#482632,#321b25);border-color:#ffffff1c;color:#fff0ed}
+.reason:hover,.reason:focus-visible{box-shadow:0 18px 36px #09030a55;border-color:#e98ca9}
+.reason small{color:#d6b8ba}
+.letter p{color:#f0d7d7}
+.letter .sign{color:#ff9bb9}
+.bouquet-art{background:radial-gradient(circle at 50% 40%,#754052 0,#482735 62%,#321b25 100%)}
+.bouquet-art:before,.bouquet-art:after{border-color:#ffffff14}
+.chip{background:#3b202b;border-color:#75404e;color:#f4d8df}
+.chip[aria-pressed=true]{background:#7d3a53;border-color:#ff9fbd;color:#fff}
+.memory-card{background:#472833;border-color:#ffffff1a}
+.memory-card blockquote{color:#ffe9e8}
+.memory-card cite{color:#ffadbf}
+.secret{background:linear-gradient(135deg,#4a2633,#321a27)}
+.secret-message{color:#ffc0d0}
+.footer{color:#c59da5}
+.toast{background:#ffe5ec;color:#4b1e2d}
+@keyframes bouquetFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-13px) rotate(1deg)}}
+@media(max-width:850px){.site-nav{border-radius:22px}.nav-links{gap:12px}.nav-links a{font-size:.78rem}.hero{grid-template-columns:1fr 1fr;min-height:520px}.hero-copy-wrap{padding-left:0}}
+@media(max-width:650px){main{width:min(100% - 24px,1240px)}.site-nav{align-items:flex-start;flex-wrap:wrap;padding:12px 15px}.nav-links{order:3;width:100%;overflow-x:auto;padding:4px 0 2px;justify-content:space-between}.nav-links a{white-space:nowrap}.nav-heart{margin-left:auto}.hero{grid-template-columns:1fr;gap:0;text-align:center;padding:48px 4px 28px;min-height:auto}.hero-copy-wrap{padding:0}.hero-copy{margin:auto}.hero-actions{justify-content:center}.scroll-note{text-align:center}.hero-art{max-height:350px;overflow:hidden}.hero-art img{width:min(100%,430px);margin-top:-5px;margin-bottom:-30px}h1{font-size:clamp(3.2rem,13vw,5.4rem)}}
+@media(prefers-reduced-motion:reduce){.hero-art img{animation:none}}
+\n</style>
 </head>
 <body>
 <div class="ambient" aria-hidden="true"><i class="orb one"></i><i class="orb two"></i><i class="orb three"></i></div>
 <canvas id="petals" aria-hidden="true"></canvas>
 <main>
 <div class="topline"><span>маленькое признание в любви</span><span>сделано с теплом · ♡</span></div>
-<header class="hero">
-<div>
+<nav class="site-nav" aria-label="Главная навигация">
+<a class="brand" href="#home"><span>♡</span> Для моей мамы</a>
+<div class="nav-links"><a href="#letter">Письмо</a><a href="#reasons">Причины</a><a href="#bouquet-section">Букет</a><a href="#memories">Воспоминания</a><a href="#secret-section">Секрет</a></div>
+<span class="nav-heart" aria-hidden="true">♡</span>
+</nav>
+<header class="hero" id="home">
+<div class="hero-copy-wrap">
 <div class="eyebrow">самому дорогому человеку</div>
-<h1>Мамочка,<em>это для тебя</em></h1>
-<p class="hero-copy">Сегодня хочется не просто сказать «спасибо», а напомнить, как сильно ты любима. За твою заботу, терпение, доброту и за то особенное тепло, которое всегда рядом.</p>
-<div class="hero-actions"><button class="btn btn-primary" id="openLetter">Открыть письмо <span>♡</span></button><button class="btn btn-soft" id="makeMagic">Немного волшебства ✨</button></div>
-<div class="hero-flower" aria-hidden="true">💐</div>
+<h1>Мамочка,<em>с Днём матери!</em></h1>
+<p class="hero-copy">Спасибо тебе за твою бесконечную любовь, заботу, поддержку и веру в меня. Ты — моё самое большое счастье.</p>
+<div class="hero-actions"><button class="btn btn-primary" id="openLetter">♡ Открыть поздравление ↓</button><button class="btn btn-soft" id="makeMagic">Немного волшебства ✨</button></div>
 <div class="scroll-note">листай ниже — там ещё кое-что</div>
 </div>
+<div class="hero-art"><img src="assets/rose-bouquet.svg" alt="Нежный букет роз в розовой обёртке для мамы" fetchpriority="high"></div>
 </header>
 
 <section class="section reveal" id="letter">
@@ -78,7 +133,7 @@ h1,h2,h3,p{margin-top:0}h1{font:600 clamp(3.2rem,9vw,7.3rem)/.99 "Playfair Displ
 <div class="memory"><div class="memory-card"><blockquote>«Дом — это не место. Дом — это тот человек, к которому всегда хочется возвращаться».</blockquote><cite>И для меня этот человек — ты, мам.</cite></div><div class="memory-side"><p>Вспомни сегодня что-нибудь хорошее: нашу смешную историю, тёплый вечер, прогулку или обычный разговор на кухне. Именно из таких мгновений и складывается самое настоящее счастье.</p><p>Пусть впереди нас ждёт ещё очень много таких воспоминаний.</p></div></div>
 </section>
 
-<section class="section secret reveal">
+<section class="section secret reveal" id="secret-section">
 <div class="secret-lock">💌</div><div class="kicker">маленький секрет</div><h2>А здесь кое-что только для тебя</h2><p style="color:var(--muted)">Нажми на кнопку — и откроется последнее послание.</p><button class="btn btn-primary" id="secretButton">Открыть секрет ♡</button><div class="secret-message" id="secretMessage">Мамочка, если вдруг ты когда-нибудь усомнишься, насколько ты важна, просто вспомни: ты — огромная часть моего сердца. Спасибо за жизнь, за любовь и за то, что ты моя мама. Я тебя люблю бесконечно. ❤️</div></section>
 <footer class="footer">Сделано с бесконечной любовью <span class="heart">♥</span> для самой лучшей мамы</footer>
 </main>
