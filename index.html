@@ -31,12 +31,15 @@ main{background:var(--paper);color:var(--wine);position:relative}
 .divider{height:1px;background:#eadbd5;max-width:1240px;margin:auto}
 /* Family photos are quiet side accents, not a separate gallery */
 .intro,.note,.letter{position:relative;isolation:isolate}
-.side-photo{position:absolute;z-index:-1;display:block;width:clamp(92px,10.5vw,142px);aspect-ratio:3/4;background-image:url('assets/family-moments.jpg');background-repeat:no-repeat;background-size:200% 300%;background-color:#3a202b;border:7px solid #fffaf5;box-shadow:0 14px 38px #24151b24;opacity:.96;pointer-events:none}
+.side-photo{position:absolute;z-index:-1;display:block;width:clamp(92px,10.5vw,142px);aspect-ratio:3/4;background-repeat:no-repeat;background-size:contain;background-position:center;background-color:#3a202b;border:7px solid #fffaf5;box-shadow:0 14px 38px #24151b24;opacity:.96;pointer-events:none}
 .side-photo.left{left:clamp(14px,3.2vw,48px);top:50%;transform:translateY(-50%) rotate(-5deg)}
 .side-photo.right{right:clamp(14px,3.2vw,48px);top:50%;transform:translateY(-50%) rotate(5deg)}
-.side-photo.p1{background-position:0 0}.side-photo.p2{background-position:100% 0}
-.side-photo.p3{background-position:0 50%}.side-photo.p4{background-position:100% 50%}
-.side-photo.p5{background-position:0 100%}.side-photo.p6{background-position:100% 100%}
+.side-photo.p1{background-image:url('assets/family-1.png')}
+.side-photo.p2{background-image:url('assets/family-2.png')}
+.side-photo.p3{background-image:url('assets/family-3.png')}
+.side-photo.p4{background-image:url('assets/family-4.png')}
+.side-photo.p5{background-image:url('assets/family-5.png')}
+.side-photo.p6{background-image:url('assets/family-6.png')}
 .intro{padding-left:clamp(150px,17vw,230px);padding-right:clamp(150px,17vw,230px)}
 .note{padding-left:clamp(150px,17vw,230px);padding-right:clamp(150px,17vw,230px)}
 .letter{padding-left:clamp(150px,17vw,230px);padding-right:clamp(150px,17vw,230px)}
